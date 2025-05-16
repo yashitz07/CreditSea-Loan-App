@@ -121,7 +121,7 @@ const SignUp: React.FC = () => {
     }
     if (isValid) {
       try {
-        const response = await fetch("/api/users/register", {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/users/register`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -39,7 +39,7 @@ const RequestLoan = () => {
 
     try {
       const response = await fetch(
-        "/api/loans/createLoan/" + Cookies.get("userId"),
+        `/${process.env.NEXT_PUBLIC_BACKEND_URL}/api/loans/createLoan/` + Cookies.get("userId"),
         {
           method: "POST",
           headers: {

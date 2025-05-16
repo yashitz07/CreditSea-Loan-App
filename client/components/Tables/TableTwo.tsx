@@ -20,7 +20,7 @@ const TableTwo = () => {
   const [selectedStatus, setSelectedStatus] = useState<string>(""); // State to track selected status
   const fetchLoans = async () => {
     try {
-      const response = await fetch("/api/loans/getAllLoans", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/loans/getAllLoans`, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json", // You can include other headers as needed
@@ -43,7 +43,7 @@ const TableTwo = () => {
   // Function to handle status updates
   const handleStatusUpdate = async (loanId: string) => {
     try {
-      const response = await fetch(`/api/loans/updateLoanStatus/${loanId}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/loans/updateLoanStatus/${loanId}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,

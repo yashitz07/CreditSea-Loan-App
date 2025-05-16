@@ -39,7 +39,7 @@ const DropdownUser = () => {
     try {
       Cookies.remove("userId");
       Cookies.remove("user_token");
-      const response = await fetch(`/api/users/logout`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/users/logout`, {
         method: "POST",
       });
 

@@ -46,7 +46,7 @@ const SignIn: React.FC = () => {
     if (isValid) {
       // Perform login logic here, e.g., send a POST request to your backend
       try {
-        const response = await fetch("/api/users/login", {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/users/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

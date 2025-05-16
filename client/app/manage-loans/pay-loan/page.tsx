@@ -37,7 +37,7 @@ const PayLoan = () => {
   const loanId = searchParams.get("loanId");
   const fetchLoanDetails = async () => {
     try {
-      const response = await fetch(`/api/loans/getLoanDetails/${loanId}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/loans/getLoanDetails/${loanId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json", // You can include other headers as needed
@@ -76,7 +76,7 @@ const PayLoan = () => {
 
     try {
       // Send a POST request to your backend to process the repayment
-      const response = await fetch(`/api/loans/processRepayment/${loanId}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/loans/processRepayment/${loanId}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

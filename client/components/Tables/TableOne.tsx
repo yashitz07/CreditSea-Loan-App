@@ -25,7 +25,7 @@ const TableOne = () => {
       try {
         // Replace with the actual user ID or get it from the authentication context
         const response = await fetch(
-          `/api/loans/getUserLoans/${Cookies.get("userId")}`,
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/loans/getUserLoans/${Cookies.get("userId")}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
